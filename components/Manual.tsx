@@ -1,3 +1,5 @@
+/* Copyright 2020 the Deno authors. All rights reserved. MIT license. */
+
 import React, {
   useState,
   useEffect,
@@ -44,7 +46,7 @@ function Manual() {
   const { version, path } = useMemo(() => {
     const [identifier, ...pathParts] = (query.rest as string[]) ?? [];
     const path = pathParts.length === 0 ? "" : `/${pathParts.join("/")}`;
-    const [_, version] = parseNameVersion(identifier ?? "");
+    const version = parseNameVersion(identifier ?? "")[1] ?? versionMeta.cli[0];
     return { version, path: path || "/introduction" };
   }, [query]);
 

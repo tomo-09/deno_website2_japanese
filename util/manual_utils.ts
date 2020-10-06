@@ -1,8 +1,12 @@
-//const xBasepath = "https://deno.land/x/deno@";
+/* Copyright 2020 the Deno authors. All rights reserved. MIT license. */
+
+// const xBasepath = "https://deno.land/x/deno@";
 const xBasepath =
   "https://raw.githubusercontent.com/tokiedokie/deno_website2_japanese/";
+// const githubBasepath = "https://raw.githubusercontent.com/denoland/deno/";
 const githubBasepath =
   "https://raw.githubusercontent.com/tokiedokie/deno_website2_japanese/";
+// const docpath = "https://github.com/denoland/deno/blob/";
 const docpath = "https://github.com/tokiedokie/deno_website2_japanese/blob/";
 import VERSIONS from "../versions.json";
 

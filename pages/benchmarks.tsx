@@ -23,6 +23,7 @@ import { CookieBanner } from "../components/CookieBanner";
 const Benchmarks = () => {
   const _ = useRouter();
   const location = typeof window !== "undefined" ? window.location : null;
+  const typescriptBenches = ["check", "no_check", "bundle"];
 
   let show!: { dataFile: string; range: number[]; search: string };
   // Default (recent).
@@ -200,7 +201,7 @@ const Benchmarks = () => {
                 <BenchmarkOrLoading
                   data={data}
                   columns={data?.execTime.filter(
-                    ({ name }) => !["check", "no_check"].includes(name)
+                    ({ name }) => !typescriptBenches.includes(name)
                   )}
                   yLabel="seconds"
                   yTickFormat={formatLogScale}
@@ -231,7 +232,7 @@ const Benchmarks = () => {
                 <BenchmarkOrLoading
                   data={data}
                   columns={data?.threadCount.filter(
-                    ({ name }) => !["check", "no_check"].includes(name)
+                    ({ name }) => !typescriptBenches.includes(name)
                   )}
                 />
                 <p className="mt-1">
@@ -249,7 +250,7 @@ const Benchmarks = () => {
                 <BenchmarkOrLoading
                   data={data}
                   columns={data?.syscallCount.filter(
-                    ({ name }) => !["check", "no_check"].includes(name)
+                    ({ name }) => !typescriptBenches.includes(name)
                   )}
                 />
                 <p className="mt-1">
@@ -270,7 +271,7 @@ const Benchmarks = () => {
                 <BenchmarkOrLoading
                   data={data}
                   columns={data?.maxMemory.filter(
-                    ({ name }) => !["check", "no_check"].includes(name)
+                    ({ name }) => !typescriptBenches.includes(name)
                   )}
                   yLabel="megabytes"
                   yTickFormat={formatMB}
@@ -297,7 +298,7 @@ const Benchmarks = () => {
                   data={data}
                   columns={data?.execTime.filter(({ name }) => {
                     console.log(name);
-                    return ["check", "no_check"].includes(name);
+                    return typescriptBenches.includes(name);
                   })}
                   yLabel="seconds"
                   yTickFormat={formatLogScale}
@@ -308,14 +309,17 @@ const Benchmarks = () => {
                   is cached by Deno. The workload contains 20 unique TypeScript
                   modules. With <em>check</em> a full TypeScript type check is
                   performed, while <em>no_check</em> uses the{" "}
-                  <code>--no-check</code> flag to skip a full type check.
+                  <code>--no-check</code> flag to skip a full type check.{" "}
+                  <em>bundle</em>
+                  does a full type check and generates a single file output.
                   */}
                   どちらの場合も、<code>std/examples/chat/server_test.ts</code>{" "}
                   はDenoによってキャッシュされています。ワークロードには20個のユニークな
                   TypeScriptモジュールが含まれています。<em>check</em>では完全な
                   TypeScriptの型チェックが行われ、<em>no_check</em>
                   では完全な形チェックをスキップするため<code>--no-check</code>
-                  フラグが使われます。
+                  フラグが使われます。<em>バンドル</em>
+                  はフル型チェックと一つのファイルへの出力をします。
                 </p>
               </div>
             </div>
