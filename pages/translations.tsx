@@ -12,14 +12,17 @@ const TranslationsPage = () => {
   return (
     <>
       <Head>
-        <title>Translations | Deno</title>
+        {/** <title>Translations | Deno</title> */}
+        <title>翻訳 | Deno</title>;
       </Head>
       <CookieBanner />
       <Header />
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 md:px-8 mt-8 mb-24">
         <div className="max-w-screen-lg mx-auto">
-          <h4 className="text-4xl font-bold tracking-tight">Translations</h4>
+          {/** <h4 className="text-4xl font-bold tracking-tight">Translations</h4> */}
+          <h4 className="text-4xl font-bold tracking-tight">翻訳</h4>
           <p className="mt-4 text-lg">
+            {/**
             Dono docs is available in the following languages. Do you have a
             piece to display here?{" "}
             <a
@@ -27,6 +30,14 @@ const TranslationsPage = () => {
               className="link"
             >
               Add it!
+            </a>
+            */}
+            Denoドキュメントは次の限度で利用可能です。展示する物を持っていますか？{" "}
+            <a
+              href="https://github.com/denoland/deno_website2/blob/master/translations.json"
+              className="link"
+            >
+              追加してください!
             </a>
           </p>
         </div>
