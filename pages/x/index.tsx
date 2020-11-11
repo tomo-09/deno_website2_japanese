@@ -108,6 +108,12 @@ function ThirdPartyRegistryList(): React.ReactElement {
                 詳しく知る
               </a>
             </div>
+            {/* <div className="mt-8">
+              <ErrorMessage
+                title="Ongoing incident"
+                body="We are currently seeing delays and timeouts during module publishing and search. Serving of already published modules and `std` is not affected. We are working on resolving the problem."
+              />
+            </div> */}
           </div>
           <div className="max-w-screen-lg mx-auto px-4 sm:px-6 md:px-8 mt-8">
             <label htmlFor="query" className="font-medium sr-only">

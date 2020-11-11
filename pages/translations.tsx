@@ -32,7 +32,7 @@ function TranslationsPage(): React.ReactElement {
               Add it!
             </a>
             */}
-            Denoドキュメントは次の限度で利用可能です。展示する物を持っていますか？{" "}
+            Denoドキュメントは次の言語で利用可能です。展示する物を持っていますか？{" "}
             <a
               href="https://github.com/denoland/deno_website2/blob/master/translations.json"
               className="link"
