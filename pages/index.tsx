@@ -152,10 +152,8 @@ for await (const req of s) {
             {/*
             You can find a more in depth introduction, examples, and environment
             setup guides in{" "}
-            <Link href="/[...rest]" as="/manual">
-              <a className="link">
-              the manual
-              </a>
+            <Link href="/manual">
+              <a className="link">the manual</a>
             </Link>
             .
             */}
@@ -192,7 +190,7 @@ for await (const req of s) {
           <p className="my-4 text-gray-700">
             {/*
             Deno comes with{" "}
-            <Link href="/[...rest]" as="/manual">
+            <Link href="/manual">
               <a className="link">a manual</a>
             </Link>{" "}
             which contains more in depth explanations about the more complex
@@ -246,7 +244,7 @@ for await (const req of s) {
           <p className="my-4 text-gray-700">
             {/*
             These standard modules are hosted at{" "}
-            <Link href="/[...rest]" as="/std">
+            <Link href="/std">
               <a className="link">deno.land/std</a>
             </Link>{" "}
             and are distributed via URLs like all other ES modules that are
