@@ -202,6 +202,66 @@ project (`npm init -y` as necessary), then add the following block to your
 }
 ```
 
+<!-- #### LSP clients -->
+#### LSP クライアント
+
+<!--
+Deno has builtin support for the
+[Language server protocol](https://langserver.org).
+-->
+Deno は [Language server protocol](https://langserver.org) へビルトインサポートしています
+
+<!--
+If your editor supports the LSP, you can use Deno as a language server for
+TypeScript and JavaScript.
+-->
+もしエディターが LSP をサポートしている場合、Deno を TypeScript と JavaScript の language server として使用することができます。
+
+<!-- The editor can start the server with `deno lsp`. -->
+エディターは `deno lsp` でサーバーを開始することができます。
+
+<!-- ##### Example for Kakoune -->
+#### Kokoune での例
+
+<!--
+After installing the [`kak-lsp`](https://github.com/kak-lsp/kak-lsp) LSP client
+you can add the Deno language server by adding the following to your
+`kak-lsp.toml`
+-->
+[`kak-lsp`](https://github.com/kak-lsp/kak-lsp) LSP クライアントをインストールした後、`kak-lsp.toml` に以下を追加することで、Deno language server を追加することができます
+
+```toml
+[language.deno]
+filetypes = ["typescript", "javascript"]
+roots = [".git"]
+command = "deno"
+args = ["lsp"]
+```
+
+<!-- ##### Example for Vim/Neovim -->
+#### Vim/Neovim での例
+
+<!--
+After installing the [`vim-lsp`](https://github.com/prabirshrestha/vim-lsp) LSP
+client you can add the Deno language server by adding the following to your
+`vimrc`/`init.vim`:
+-->
+[`vim-lsp`](https://github.com/prabirshrestha/vim-lsp) LSPクライアントをインストールした後、`vimrc`/`init.vim` に以下を追加することで、Deno language server を追加することができます:
+
+```vim
+if executable("deno")
+  augroup LspTypeScript
+    autocmd!
+    autocmd User lsp_setup call lsp#register_server({
+    \ "name": "deno lsp",
+    \ "cmd": {server_info -> ["deno", "lsp"]},
+    \ "root_uri": {server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), "tsconfig.json"))},
+    \ "whitelist": ["typescript", "typescript.tsx"],
+    \ })
+  augroup END
+endif
+```
+
 <!--
 If you don't see your favorite IDE on this list, maybe you can develop an
 extension. Our [community Discord group](https://discord.gg/deno) can give you
