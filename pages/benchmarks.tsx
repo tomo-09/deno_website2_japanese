@@ -375,39 +375,27 @@ function Benchmarks(): React.ReactElement {
                 </p>
                 <ul className="ml-8 list-disc my-2">
                   <li>
-                    {/*
-                    <SourceLink path="tools/deno_tcp.ts" name="deno_tcp" /> is a
-                    fake http server that doesn't parse HTTP. It is comparable
-                    to <SourceLink path="tools/node_tcp.js" name="node_tcp" />
-                    */}
-                    <SourceLink path="tools/deno_tcp.ts" name="deno_tcp" />{" "}
-                    はHTTPをパースしないフェイクhttpサーバーです。これは{" "}
-                    <SourceLink path="tools/node_tcp.js" name="node_tcp" />{" "}
-                    にあたります。
+                    <SourceLink path="cli/bench/deno_tcp.ts" name="deno_tcp" />{" "}
+                    is a fake http server that doesn't parse HTTP. It is
+                    comparable to{" "}
+                    <SourceLink path="cli/bench/node_tcp.js" name="node_tcp" />
                   </li>
                   <li>
-                    {/*
                     <SourceLink
                       path="std/http/http_bench.ts"
                       name="deno_http"
                     />{" "}
                     is a web server written in TypeScript. It is comparable to{" "}
-                    <SourceLink path="tools/node_http.js" name="node_http" />
-                    */}
                     <SourceLink
-                      path="std/http/http_bench.ts"
-                      name="deno_http"
-                    />{" "}
-                    はTypeScriptで書かれたwebサーバーです。これは{" "}
-                    <SourceLink path="tools/node_http.js" name="node_http" />{" "}
-                    にあたります。
+                      path="cli/bench/node_http.js"
+                      name="node_http"
+                    />
                   </li>
                   <li className="break-words">
-                    {/*
-                    deno_core_single and deno_core_multi are two versions of a
-                    minimal fake HTTP server. It blindly reads and writes fixed
-                    HTTP packets. It is comparable to deno_tcp and node_tcp.
-                    This is a standalone executable that uses{" "}
+                    core_http_bin_ops and core_http_json_ops are two versions of
+                    a minimal fake HTTP server. It blindly reads and writes
+                    fixed HTTP packets. It is comparable to deno_tcp and
+                    node_tcp. This is a standalone executable that uses{" "}
                     <a
                       className="link"
                       href="https://crates.io/crates/deno_core"
@@ -416,70 +404,30 @@ function Benchmarks(): React.ReactElement {
                     </a>
                     . The code is in{" "}
                     <SourceLink
-                      path="core/examples/http_bench.rs"
-                      name="http_bench.rs"
+                      path="core/examples/http_bench_bin_ops.rs"
+                      name="http_bench_bin_ops.rs"
                     />{" "}
                     and{" "}
                     <SourceLink
-                      path="core/examples/http_bench.js"
-                      name="http_bench.js"
+                      path="core/examples/http_bench_bin_ops.js"
+                      name="http_bench_bin_ops.js"
                     />
-                    . single uses{" "}
-                    <a
-                      className="link"
-                      href="https://docs.rs/tokio/latest/tokio/runtime/struct.Builder.html#method.basic_scheduler"
-                    >
-                      tokio::runtime::Builder::basic_scheduler
-                    </a>{" "}
-                    and multi uses{" "}
-                    <a
-                      className="link"
-                      href="https://docs.rs/tokio/latest/tokio/runtime/struct.Builder.html#method.threaded_scheduler"
-                    >
-                      tokio::runtime::Builder::threaded_scheduler
-                    </a>
-                    .
-                    */}
-                    deno_core_singleとdeno_core_multiは
-                    最小のフェイクHTTPサーバーの2つのバージョンです。
-                    固有のHTTPパケットをむやみに読み込み書き込みます。
-                    deno_tcpとnode_tcpにあたります。これは{" "}
-                    <a
-                      className="link"
-                      href="https://crates.io/crates/deno_core"
-                    >
-                      denoのrustクレート
-                    </a>{" "}
-                    を使っていてスタンドアローンで実行可能です。 コードは{" "}
+                    for http_bench_bin_ops and{" "}
                     <SourceLink
-                      path="core/examples/http_bench.rs"
-                      name="http_bench.rs"
+                      path="core/examples/http_bench_json_ops.rs"
+                      name="http_bench_json_ops.rs"
                     />{" "}
-                    と{" "}
+                    and{" "}
                     <SourceLink
-                      path="core/examples/http_bench.js"
-                      name="http_bench.js"
-                    />{" "}
-                    にあります。シングルは{" "}
-                    <a
-                      className="link"
-                      href="https://docs.rs/tokio/latest/tokio/runtime/struct.Builder.html#method.basic_scheduler"
-                    >
-                      tokio::runtime::Builder::basic_scheduler
-                    </a>{" "}
-                    を使い、マルチでは{" "}
-                    <a
-                      className="link"
-                      href="https://docs.rs/tokio/latest/tokio/runtime/struct.Builder.html#method.threaded_scheduler"
-                    >
-                      tokio::runtime::Builder::threaded_scheduler
-                    </a>{" "}
-                    を使います
+                      path="core/examples/http_bench_json_ops.js"
+                      name="http_bench_json_ops.js"
+                    />
+                    for http_bench_json_ops.
                   </li>
                   <li>
                     {/*
                     <SourceLink
-                      path="tools/hyper_hello/hyper_hello.rs"
+                      path="test_util/src/test_server.rs"
                       name="hyper"
                     />{" "}
                     is a Rust HTTP server and represents an upper bound.
@@ -541,13 +489,13 @@ function Benchmarks(): React.ReactElement {
                   <li>
                     {/*
                     <SourceLink
-                      path="tools/deno_tcp_proxy.ts"
+                      path="cli/bench/deno_tcp_proxy.ts"
                       name="deno_proxy_tcp"
                     />{" "}
                     is a fake tcp proxy server that doesn't parse HTTP. It is
                     comparable to{" "}
                     <SourceLink
-                      path="tools/node_tcp_proxy.js"
+                      path="cli/bench/node_tcp_proxy.js"
                       name="node_proxy_tcp"
                     />
                     */}
@@ -565,13 +513,13 @@ function Benchmarks(): React.ReactElement {
                   <li>
                     {/*
                     <SourceLink
-                      path="tools/deno_http_proxy.ts"
+                      path="cli/bench/deno_http_proxy.ts"
                       name="deno_proxy"
                     />{" "}
                     is an HTTP proxy server written in TypeScript. It is
                     comparable to{" "}
                     <SourceLink
-                      path="tools/node_http_proxy.js"
+                      path="cli/bench/node_http_proxy.js"
                       name="node_proxy"
                     />
                     */}
@@ -589,7 +537,7 @@ function Benchmarks(): React.ReactElement {
                   <li>
                     {/*
                     <SourceLink
-                      path="tools/hyper_hello/hyper_hello.rs"
+                      path="test_util/src/test_server.rs"
                       name="hyper"
                     />{" "}
                     is a Rust HTTP server used as the origin for the proxy
@@ -658,7 +606,8 @@ function Benchmarks(): React.ReactElement {
                   We track the size of various files here. "deno" is the release
                   binary.
                   */}
-                  ここでは様々なファイルのサイズをトラッキングしています。"deno" はリリースバイナリです。
+                  ここでは様々なファイルのサイズをトラッキングしています。"deno"
+                  はリリースバイナリです。
                 </p>
               </div>
               <div className="mt-8">
