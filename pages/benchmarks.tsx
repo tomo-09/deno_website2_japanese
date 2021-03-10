@@ -643,8 +643,8 @@ function Benchmarks(): React.ReactElement {
               <div className="mt-8">
                 <a href="#executable-size" id="executable-size">
                   <h5 className="text-lg font-medium tracking-tight hover:underline">
-                    {/* Executable size */}
-                    実行可能ファイルサイズ
+                    {/* File sizes */}
+                    ファイルサイズ
                   </h5>
                 </a>
                 <BenchmarkOrLoading
@@ -654,8 +654,11 @@ function Benchmarks(): React.ReactElement {
                   yTickFormat={formatMB}
                 />
                 <p className="mt-1">
-                  {/* Deno ships only a single binary. We track its size here. */}
-                  Denoは一つのバイナリで実行可能です。そのサイズを追跡します。
+                  {/*
+                  We track the size of various files here. "deno" is the release
+                  binary.
+                  */}
+                  ここでは様々なファイルのサイズをトラッキングしています。"deno" はリリースバイナリです。
                 </p>
               </div>
               <div className="mt-8">
@@ -687,6 +690,14 @@ function Benchmarks(): React.ReactElement {
                     </Link>
                   </li>
                 </ul>
+              </div>
+              <div className="mt-8">
+                <a href="#cargo-deps" id="cargo-deps">
+                  <h5 className="text-lg font-medium tracking-tight hover:underline">
+                    Cargo Dependencies
+                  </h5>
+                </a>{" "}
+                <BenchmarkOrLoading data={data} columns={data?.cargoDeps} />
               </div>
             </div>
           </div>
