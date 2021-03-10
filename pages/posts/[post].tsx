@@ -15,10 +15,10 @@ import { CookieBanner } from "../../components/CookieBanner";
 
 /*
 const postPath =
-  "https://github.com/denoland/deno_website2/blob/master/public/posts/";
+  "https://github.com/denoland/deno_website2/blob/main/public/posts/";
 */
 const postPath =
-  "https://github.com/tokiedokie/deno_website2_japanese/tree/master/public/posts/";
+  "https://github.com/tokiedokie/deno_website2_japanese/tree/main/public/posts/";
 
 interface Props {
   markdown: string;

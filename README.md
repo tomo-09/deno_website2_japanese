@@ -1,6 +1,6 @@
 # deno 日本語サイト
 
-![ci](https://github.com/tokiedokie/deno_website2_japanese/workflows/ci/badge.svg)
+[![Build Status](https://github.com/denoland/deno_website2/workflows/ci/badge.svg?branch=main&event=push)](https://github.com/denoland/deno_website2/actions)
 
 https://deno-ja.vercel.app/ のレポジトリです。
 
