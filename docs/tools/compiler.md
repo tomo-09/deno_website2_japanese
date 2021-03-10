@@ -51,5 +51,19 @@ can be partially embedded.
 <!-- ### Cross Compilation -->
 ### クロスコンパイル
 
-<!-- Cross compiling binaries for different platforms is not currently possible. -->
-別のプラットフォームへのクロスコンパイルバイナリは現時点では不可能です。
+<!--
+You can use cross compilation by adding `--target` CLI argument, benefiting that
+you can create binaries for other platforms in single CI machine. Deno supports
+compiling to Windows x64, macOS x64, macOS ARM and Linux x64 currently. Use
+`deno compile --help` to get the full list about compilation targets.
+-->
+CLI 引数に `--target` を追加することでクロスコンパイルできます。これの利点は、一つの CI マシンで他のプラットフォームへのバイナリを生成できることです。Deno は現在 Windows x64、macOS ARM そして Linux x64 へのコンパイルをサポートします。コンパイルターゲットに関する完全なリストを得るには `deno compile --help` を使ってください。
+
+<!-- ### Generating smaller binaries -->
+### より小さいバイナリの生成
+
+<!--
+Once `--lite` argument is passed, `deno compile` will use a slimmed-down
+runtime-only binary.
+-->
+引数に `--lite` が渡されると、`deno compile` は小さくしたランタイムのバイナリを使用します。 
