@@ -37,7 +37,8 @@ for await (const req of s) {
           <span className="inline">Announcing the Deno Company.</span>
           <span className="block sm:ml-2 sm:inline-block font-semibold">
             <a href="https://deno.com/blog/the-deno-company">
-              Read the blog post <span aria-hidden="true">&rarr;</span>
+              {/* Read the blog post <span aria-hidden="true">&rarr;</span> */}
+              ブログを読む <span aria-hidden="true">&rarr;</span>
             </a>
           </span>
         </div>
