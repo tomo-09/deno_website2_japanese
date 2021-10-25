@@ -34,11 +34,12 @@ for await (const req of s) {
       <CookieBanner />
       <div className="bg-blue-500 p-4 text-white flex justify-center text-center">
         <div className="max-w-screen-xl">
-          <span className="inline">Announcing the Deno Company.</span>
+          {/* <span className="inline">Deno 1.9 is out.</span> */}
+          <span className="inline">Deno 1.9 登場。</span>
           <span className="block sm:ml-2 sm:inline-block font-semibold">
-            <a href="https://deno.com/blog/the-deno-company">
-              {/* Read the blog post <span aria-hidden="true">&rarr;</span> */}
-              ブログを読む <span aria-hidden="true">&rarr;</span>
+            <a href="https://deno.com/blog/v1.9">
+              {/* Read the release notes <span aria-hidden="true">&rarr;</span> */}
+              リリースノートを読む <span aria-hidden="true">&rarr;</span>
             </a>
           </span>
         </div>
