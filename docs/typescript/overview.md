@@ -22,7 +22,7 @@ it is running on. So when we say TypeScript is a first class language in Deno,
 we mean that we try to make the user experience in authoring and running
 TypeScript as easy and straightforward as JavaScript and Web Assembly.
 -->
-_でも、ちょっと待ってください、Deno は本当に TypeScript を実行しているのですか？_ と自問するかもしれません。実行が何を意味するかにもよりますが。ブラウザは実際にJavaScriptを _実行_ しているわけではないという議論もあるかもしれません。ブラウザ中の JavaScript エンジンは JavaScript を一連のオペレーションコードに変換し、サンドボックス内で実行します。つまりJavaScriptをアセンぷりに近いものに変換しています。Web Assembly でさえ同様の変換を経ています、Web Assembly はアーキテクチャに非依存ですが、動作する特定のプラットフォームアーキテクチャに必要なマシン固有のオペレーションコードに変換する必要があります。つまり、Deno で TypeScript が第一級言語であるということは、JavaScript や Web Assembly のように TypeScript のオーサリングや実行が簡単で直感的にできるようにしているということです。
+_でも、ちょっと待ってください、Deno は本当に TypeScript を実行しているのですか？_ と自問するかもしれません。実行が何を意味するかにもよりますが。ブラウザは実際にJavaScriptを _実行_ しているわけではないという議論もあるかもしれません。ブラウザ中の JavaScript エンジンは JavaScript を一連のオペレーションコードに変換し、サンドボックス内で実行します。つまりJavaScriptをアセンブリに近いものに変換しています。Web Assembly でさえ同様の変換を経ています、Web Assembly はアーキテクチャに非依存ですが、動作する特定のプラットフォームアーキテクチャに必要なマシン固有のオペレーションコードに変換する必要があります。つまり、Deno で TypeScript が第一級言語であるということは、JavaScript や Web Assembly のように TypeScript のオーサリングや実行が簡単で直感的にできるようにしているということです。
 
 <!--
 Behind the scenes, we use a combination of technologies, in Rust and JavaScript,
